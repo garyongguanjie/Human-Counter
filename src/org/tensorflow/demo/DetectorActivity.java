@@ -156,7 +156,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                     String value = msg.arg1 + "";
                     Firebase childRef = mRootRef.child(key); // to put the "child" into firebase
                     Firebase latestChild = mRootRef.child(current);
-                    latestChild.child(section).setValue(value);
+                    latestChild.child(section).setValue(msg.arg1);
                     Date currDate = new Date();
                     if((currDate.getTime()-date.getTime())>=1000) {//only push to firebase if interval is more than 1000ms
                         date = currDate;
