@@ -16,6 +16,7 @@
 
 package org.tensorflow.demo;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
@@ -138,6 +139,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
     private Firebase mRootRef;
     private Date date = new Date();
 
+    @SuppressLint("HandlerLeak")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -387,7 +389,6 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                     }
                 });
         thread.start();
-
     }
 
     @Override
